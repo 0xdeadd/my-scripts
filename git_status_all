@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+import os
+
+def check_git_status(base_directories):
+    for base_directory in base_directories:
+        for root, dirs, files in os.walk(base_directory):
+            if '.git' in dirs:
+                print(f"Checking git status in {root}")
+                os.chdir(root)
+                os.system('git status')
+                print('---' * 10)
+
+if __name__ == "__main__":
+    base_directories = ['/home/cleve/projects', '/home/cleve/dotfiles', '/home/cleve/scripts']
+    check_git_status(base_directories)
+

@@ -9,7 +9,7 @@ mkdir -p $BACKUP_DIR $ENCRYPTED_DIR
 rm -rf $BACKUP_DIR/* $ENCRYPTED_DIR/*
 
 # Use rsync to copy files to the local backup directory, excluding specific directories
-rsync -av --exclude '.cache/' --exclude '.local/share/Trash/' --exclude '.flatpak/' ~/ $BACKUP_DIR/
+rsync -av --exclude '.cache/' --exclude '.local/share/Trash/' --exclude '.flatpak/' --exclude 'backup_home/' --exclude 'encrypted_home_backup/' ~/ $BACKUP_DIR/
 
 # Encrypt the backup directory
 tar czvf - $BACKUP_DIR | gpg -c --cipher-algo AES256 -o $ENCRYPTED_DIR/backup.tar.gz.gpg
