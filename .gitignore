@@ -1,0 +1,47 @@
+# .gitignore
+
+# SSH Keys
+*.key
+*.pub
+*.pem
+
+# Ansible sensitive files
+*.vault
+group_vars/*.vault.yml
+host_vars/*.vault.yml
+*.retry
+
+# Python-specific
+*.pyc
+*.pyo
+*.egg-info/
+__pycache__/
+
+# Virtual Environment
+venv/
+*.venv
+env/
+*.env
+
+# Log files
+*.log
+
+# Swap files (Vim, etc.)
+*.swp
+*.swo
+*.swn
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
